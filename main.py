@@ -239,7 +239,7 @@ def pilihan5():
         except:
             print('Data yang Anda masukan bukan berupa angka, silakan coba lagi. Terima kasih.')
             continue
-        df = pd.read_csv(namafile, usecols=['Nama', 'NIP', 'Golongan', 'Jabatan'])
+        df = pd.read_csv(namafile, usecols=['Nama', 'NIP', 'Golongan', 'Jabatan'],index_cols=0)
         dfcari = (df[df['NIP'].astype(str).str.contains(str(parameter))])
         dfall = pd.read_csv(namafile, usecols=judul)
         print(tabulate(dfcari, headers=judul, tablefmt='github'))
